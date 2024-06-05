@@ -1,3 +1,4 @@
+package startz;
 import java.util.Scanner;
 public class Person {
     //instance variable
