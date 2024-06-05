@@ -1,22 +1,38 @@
 package startz;
-import java.util.Scanner;
-public class Person {
-    //instance variable
-    Scanner sc = new Scanner(System.in);
-    public String name = sc.nextLine();
-    public int age = 18;
-    //Default Constructor
-    public Person(){
+import java.util.*;
+class Person {
+	String name;
+	int age;
+//	constructor
+	public Person(String name,int age) {
+		this.name = name;
+		this.age = age;
+	}
+//	method
+	public void display() {
+		System.out.println("Employee name: "+name+"Employee age: "+age);
+	}
 
-    }
-    //Method to display output
-    public void display(){
-//    System.out.print(name);
-    System.out.println("Age: "+age);
-    }
-    public static void main(String[] args){
-        System.out.print("Enter the name: ");
-        Person person = new Person();
-        person.display();
-    }
+}
+//inherits
+class Employee extends Person{
+	int employeeId;
+	int salary;
+//	constructor
+	public Employee(String name,int age,int employeeId,int salary) {
+		super(name,age);
+		this.employeeId = employeeId;
+		this.salary = salary;
+		
+	}
+//	methodx
+	public void display() {
+		super.display();
+		System.out.println("EmployeeId: "+employeeId+"Salary: "+salary);
+		
+	}
+	public static void main(String[] args) {
+		Employee emp = new Employee("Again",18,3121,200000);
+		emp.display();
+	}
 }
